@@ -1,15 +1,14 @@
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(windowWidth, windowHeight);
+
+  this.vehicle = new Vehicle(createVector(200, 200), 16, 16, 1);
 }
 
 function draw() {
   background(220);
-  if(mouseIsPressed){
-    fill(0);
-  } else {
-    fill(255);
-  }
-  
-  ellipse(mouseX, mouseY, 80, 80);
 
+  this.vehicle.seek(createVector(mouseX, mouseY));
+  this.vehicle.update();
+  this.vehicle.display();
+  
 }
