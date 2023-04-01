@@ -101,15 +101,15 @@ class Vehicle {
 
     display() {
 
-        if(this.location.x > windowWidth){
-            this.location.x = 0
-        } else if(this.location.x < 0){
-            this.location.x = windowWidth
+        if(this.location.x > windowWidth + (this.height * 2 )){
+            this.location.x = 0 - (this.height * 2 )
+        } else if(this.location.x < 0 -  (this.height * 2 )){
+            this.location.x = windowWidth + (this.height * 2 )
         }
-        if(this.location.y > windowHeight){
-            this.location.y = 0
-        } else if(this.location.y < 0){
-            this.location.y = windowHeight
+        if(this.location.y > windowHeight + (this.height * 2 )){
+            this.location.y = 0 - (this.height * 2 )
+        } else if(this.location.y < 0 - (this.height * 2 )){
+            this.location.y = windowHeight + (this.height * 2 )
         }
 
         let theta = this.velocity.heading() + PI/2;
